@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ספר טלפונים</title>
-  <link rel="stylesheet" href="styles/style.css">
-  <script src="js/JavaScript.js"> </script>
+  <link rel="stylesheet" href="./styles/style.css">
+  <script src="./js/JavaScript.js"> </script>
 </head>
 
 <body>
@@ -21,49 +21,46 @@
     </nav>
   </header>
   <main>
-    <section id="contacts">
-      <h2>רשימת אנשי קשר</h2>
+    <div>
+      <div class="center">
+        <input type="text" id="search" placeholder="חפש איש קשר...">
+        <button id="addContactBtn">הוסף איש קשר</button>
+        <button id="deleteAllBtn">נקה כל הרשומות</button>
+        <button id="suprise">Suprise buttom</button>
+      </div>
+      <ul id="contactList"></ul>
+    </div>
 
-      <div style="display: flex;margin: auto;width: 100%; justify-content: center;gap: 20px;">
-        <button class="btn-add" onclick="showPopup()">הוסף איש קשר</button>
-        <button class="btn-clear" onclick="clearContacts()">נקה את כל אנשי הקשר</button>
+    <div id="info"  class="modal" >
+      <div class="modal-content">
+        <div  class="close-popup">&times;</div>
+        <br><br><br>
+      <p ></p>
       </div>
 
-      <div id="contact-popup" class="popup" style="margin: auto;width: 100%; justify-content: center;gap: 20px;">
+    </div>
 
-        <div class="popup-content">
-          <span class="close" onclick="hidePopup()">&times; </span>
-          <h2>הוסף/עדכן איש קשר</h2>
-          <form style="display: flex;margin: auto;width: 100%; justify-content: center;gap: 20px;" id="contact-form">
-            <label for="name">שם:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">אימייל:</label>
-            <input type="email" id="email" name="email" required>
-            <button type="submit">שמור</button>
-          </form>
-        </div>
+    <div id="popupForm" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="contactForm">
+          <input type="hidden" id="contactId">
+          <label for="name">שם:</label>
+          <input type="text" id="name" required>
+          <label for="phone">טלפון:</label>
+          <input type="text" id="phone" required>
+          <label for="address">כתובת:</label>
+          <input type="text" id="address">
+          <label for="email">אימייל:</label>
+          <input type="email" id="email">
+          <label for="notes">הערות:</label>
+          <textarea id="notes"></textarea>
+          <button type="submit" class="saveBtn">שמור</button>
+        </form>
       </div>
-
-      <ul id="contact-list">
-        <li>גיל חדד - gil@gmail.com <button onclick="deleteContact(this)">מחיקה</button> <button
-            onclick="updateContact(this)">עדכון</button></li>
-        <li>רועי מיזרחי - roei@gmail.com <button onclick="deleteContact(this)">מחיקה</button> <button
-            onclick="updateContact(this)">עדכון</button></li>
-        <li> מורי וסרמן - mori@gmail.com <button onclick="deleteContact(this)">מחיקה</button> <button
-            onclick="updateContact(this)">עדכון</button></li>
-        <li>נדב סייג - nadav@gmail.com <button onclick="deleteContact(this)">מחיקה</button> <button
-            onclick="updateContact(this)">עדכון</button></li>
-        <li>מידן חמו - miedan@gmail.com <button onclick="deleteContact(this)">מחיקה</button> <button
-            onclick="updateContact(this)">עדכון</button></li>
-        <li>מיכאל סידוריוק - misha@gmail.com <button onclick="deleteContact(this)">מחיקה</button> <button
-            onclick="updateContact(this)">עדכון</button></li>
-        <li>נעמי שומנסקי - somnski@gmail.com <button onclick="deleteContact(this)">מחיקה</button> <button
-            onclick="updateContact(this)">עדכון</button></li>
-      </ul>
-    </section>
-
+    </div>
   </main>
-  <footer>גיל חדד && רועי מיזרחי 49.1</footer>
+  <footer>גיל חדד && רועי מזרחי 49.1</footer>
 </body>
 
 </html>
